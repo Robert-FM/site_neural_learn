@@ -1,0 +1,259 @@
+/* Reset básico e fontes (mantido) */
+body, h1, h2, h3, p, ul, li, a, label, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f6f8;
+
+    /* --- IMPORTANTE: AJUSTE ESTE VALOR --- */
+    /* Verifique a ALTURA REAL do seu <header> e coloque aqui. Ex: 65px, 72px, etc. */
+    padding-top: 80px; /* ALTURA EXATA DO SEU HEADER FIXO */
+    /* --- FIM DO AJUSTE IMPORTANTE --- */
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container { /* Estilo global para .container */
+    width: 90%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+/* Header (mantido) */
+header {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+header a {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #3498db;
+}
+
+/* Conteúdo Principal da Recuperação de Senha (tag <main>) */
+.password-recovery-main-content {
+    flex-grow: 1; /* Ocupa espaço vertical */
+    display: flex; /* Centraliza seu filho direto (que é .container) */
+    /* Não precisa de justify-content ou align-items aqui se o filho .container vai ocupar todo o espaço e centralizar seu próprio conteúdo */
+    padding: 20px 0; /* Padding vertical para a seção, horizontal é tratado pelo .container filho */
+}
+
+/* Estilo específico para o .container DENTRO do .password-recovery-main-content */
+.password-recovery-main-content > .container {
+    /* Este .container já herda width, max-width, padding lateral do .container global */
+    /* Adicionamos flex para centralizar o .password-recovery-form-container dentro dele */
+    display: flex;
+    flex-direction: column; /* Caso haja mais de um item, embora aqui seja só o form */
+    justify-content: center; /* Centraliza .password-recovery-form-container verticalmente */
+    align-items: center;   /* Centraliza .password-recovery-form-container horizontalmente */
+    width: 100%; /* Faz o container ocupar a largura disponível no main */
+    flex-grow: 1; /* Permite que este container também cresça se necessário */
+}
+
+/* O card do formulário */
+.password-recovery-form-container {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%; /* Ocupa a largura permitida pelo align-items:center do pai, até o max-width */
+    max-width: 450px;
+    text-align: center;
+    /* flex-shrink: 0; /* Evita encolher se o espaço for muito limitado */
+}
+
+.password-recovery-form-container h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.form-subtitle {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* Estilos do Formulário (mantidos) */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input[type="email"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="email"]:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.btn-recover-password {
+    background-color: #3498db;
+    color: #fff;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-recover-password:hover {
+    background-color: #2980b9;
+}
+
+.alternative-action {
+    margin-top: 25px;
+    font-size: 0.9rem;
+}
+
+.alternative-action a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.alternative-action a:hover {
+    text-decoration: underline;
+}
+
+
+/* Footer (mantido) */
+footer {
+    background-color: #1a252f;
+    color: #bdc3c7;
+    text-align: center;
+    padding: 30px 0;
+}
+
+footer p {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade (mantida) */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo {
+        margin-bottom: 10px;
+    }
+    nav ul {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul li {
+        margin: 8px 0;
+        margin-left: 0;
+    }
+
+    .password-recovery-form-container {
+        padding: 25px 20px;
+    }
+
+    .password-recovery-form-container h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .password-recovery-form-container {
+        padding: 20px 15px;
+    }
+    .password-recovery-form-container h2 {
+        font-size: 1.6rem;
+    }
+    .form-subtitle {
+        font-size: 0.9rem;
+    }
+    .btn-recover-password {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+}

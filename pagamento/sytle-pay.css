@@ -1,0 +1,759 @@
+/* =============================================== */
+/* RESET BÁSICO E ESTILOS GLOBAIS */
+/* =============================================== */
+body, h1, h2, h3, h4, p, ul, li, a, figure, figcaption, article, aside, footer, header, main, nav, section, fieldset, legend, label, input, select, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Herdar fontes para facilitar a consistência */
+    font-family: inherit;
+    font-size: 100%;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Fonte base - considere alternativas como 'Open Sans', 'Lato', 'Roboto' do Google Fonts */
+    line-height: 1.6;
+    color: #333;
+    background-color: #eef1f5; /* Fundo global suave, usado no checkout-main-content */
+    padding-top: 70px; /* Ajuste este valor conforme a altura do seu header fixo */
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px; /* Largura padrão do container */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #3498db; /* Cor padrão para links */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =============================================== */
+/* HEADER (COMPARTILHADO) */
+/* =============================================== */
+header {
+    background-color: #2c3e50; /* Azul escuro */
+    color: #ecf0f1; /* Cinza claro para texto */
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.logo a, header nav ul li a { /* Estilo unificado para links do header */
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.logo a:hover, header nav ul li a:hover {
+    color: #3498db; /* Azul mais claro para hover */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    font-size: 1rem;
+}
+
+/* =============================================== */
+/* ESTILOS PARA A PÁGINA INICIAL (index.html) */
+/* =============================================== */
+
+/* Hero Section - Landing Page */
+.hero {
+    background: linear-gradient(rgba(44, 62, 80, 0.75), rgba(44, 62, 80, 0.85)), url('https://via.placeholder.com/1500x800.png?text=Neuroscience+Background') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 120px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(70vh - 70px);
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+.cta-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Content Section - Landing Page */
+.content-section { /* #about */
+    padding: 60px 0;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.content-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #2c3e50;
+}
+
+.content-section > .container > p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    color: #555;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.feature-item {
+    flex-basis: 30%;
+    min-width: 280px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fdfdfd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.feature-item img {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 15px auto;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+}
+
+.feature-item h3 {
+    font-size: 1.4rem;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+.feature-item p {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* Modules Section - Landing Page */
+.modules-section { /* #modules */
+    padding: 60px 0;
+    background-color: #f4f6f8; /* Mesmo que o body.checkout-page ou body global */
+}
+
+.modules-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #2c3e50;
+}
+
+.modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.module-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.module-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.module-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.module-card h3 {
+    font-size: 1.5rem;
+    margin: 20px 15px 10px 15px;
+    color: #2c3e50;
+}
+
+.module-card p {
+    font-size: 1rem;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    color: #555;
+    flex-grow: 1;
+}
+
+.module-button {
+    display: inline-block;
+    background-color: #5cb85c;
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 0 20px 20px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.module-button:hover {
+    background-color: #4cae4c;
+}
+
+
+/* =============================================== */
+/* ESTILOS PARA A PÁGINA DE DETALHES DO CURSO (curso-neurociencia.html) */
+/* =============================================== */
+.course-hero-banner {
+    background-color: #34495e;
+    color: #ffffff;
+    padding: 50px 0;
+    border-bottom: 5px solid #3498db;
+}
+
+.course-hero-banner h1 {
+    font-size: 2.6rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.course-hero-banner .course-subtitle {
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: #ecf0f1;
+    max-width: 800px;
+}
+
+.breadcrumbs {
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+    color: #bdc3c7;
+}
+
+.breadcrumbs a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumbs a:hover {
+    color: #ffffff;
+}
+
+.course-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    background-color: #ffffff;
+}
+
+.course-main-content {
+    flex: 2.5;
+    min-width: 0;
+}
+
+.course-sidebar {
+    flex: 1;
+    min-width: 280px;
+}
+
+.course-description h2,
+.course-curriculum h2 {
+    font-size: 1.9rem;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #3498db;
+    font-weight: 600;
+}
+
+.course-main-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.course-description p {
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 18px;
+    color: #4a4a4a;
+}
+
+.course-description h3 {
+    font-size: 1.4rem;
+    color: #3498db;
+    margin-top: 35px;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+.course-description ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 25px;
+}
+
+.course-description ul li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #555;
+    padding-left: 25px;
+    position: relative;
+}
+
+.course-description ul li::before {
+    content: "✓";
+    color: #27ae60;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+.course-curriculum {
+    margin-top: 50px;
+}
+
+.module-item {
+    background-color: #f9f9f9;
+    border: 1px solid #e7e7e7;
+    border-left: 5px solid #3498db;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.module-item:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.module-item h4 {
+    font-size: 1.25rem;
+    color: #2c3e50;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+.module-item ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.module-item ul li {
+    padding: 10px 0 10px 22px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.9rem;
+    color: #555;
+    position: relative;
+    transition: background-color 0.2s ease;
+}
+
+.module-item ul li:hover {
+    background-color: #e9ecef;
+}
+
+.module-item ul li::before {
+    content: "📚";
+    position: absolute;
+    left: 0;
+    color: #5dade2;
+    font-size: 0.9em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.module-item ul li:last-child {
+    border-bottom: none;
+}
+
+.sidebar-widget {
+    background-color: #fdfdfd;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(44, 62, 80, 0.08);
+    margin-bottom: 30px;
+}
+
+.sidebar-course-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+}
+
+.course-info-widget .price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #e67e22;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.course-info-widget .price-old {
+    font-size: 1rem;
+    color: #7f8c8d;
+    text-decoration: line-through;
+    display: block;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.enroll-button {
+    background-color: #e67e22;
+    color: #fff;
+    padding: 16px 22px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    width: 100%;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.enroll-button:hover {
+    background-color: #d35400;
+    transform: translateY(-2px);
+}
+
+.course-info-widget ul {
+    list-style: none;
+    padding: 0;
+}
+
+.course-info-widget ul li {
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.course-info-widget ul li .icon {
+    margin-right: 12px;
+    color: #3498db;
+    font-style: normal;
+    font-size: 1.1em;
+    width: 20px;
+    text-align: center;
+}
+
+.instructor-widget {
+    text-align: center;
+}
+
+.instructor-widget h3 {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.instructor-photo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 15px auto;
+    object-fit: cover;
+    border: 3px solid #3498db;
+}
+
+.instructor-widget h4 {
+    font-size: 1.1rem;
+    color: #3498db;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.instructor-widget p {
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* =============================================== */
+/* ESTILOS PARA A PÁGINA DE CHECKOUT (checkout-neurociencia.html) */
+/* ESTES SÃO OS ESTILOS DO SEU 'sytle-pay.css', INTEGRADOS AQUI */
+/* =============================================== */
+
+.checkout-main-content {
+    /* background-color: #eef1f5; já definido no body global ou aqui se quiser específico */
+    padding-top: 50px; /* Espaço abaixo do header fixo */
+    padding-bottom: 50px;
+}
+
+.checkout-page-container { /* Container específico para a página de checkout */
+    max-width: 1050px; /* Um pouco mais de largura para o container */
+    /* margin: 0 auto; já é padrão do .container */
+}
+
+.checkout-layout {
+    display: flex; /* Adicionado para garantir o layout de colunas */
+    flex-wrap: wrap; /* Adicionado para responsividade */
+    gap: 35px;
+}
+
+.checkout-form-area {
+    flex: 2.2; /* Proporção para a área do formulário */
+    background-color: #ffffff;
+    padding: 35px 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+}
+
+.checkout-summary-area {
+    flex: 1; /* Proporção para a área de resumo */
+    min-width: 300px;
+}
+
+
+.checkout-form-area h2 { /* "Detalhes da Compra" */
+    font-size: 1.9rem;
+    color: #2c3e50;
+    margin-bottom: 35px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #3498db;
+    font-weight: 600;
+}
+
+#payment-form fieldset {
+    border: none; /* Removido de reset, garantindo aqui */
+    padding: 0; /* Removido de reset, garantindo aqui */
+    margin-bottom: 35px;
+}
+
+#payment-form legend {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 25px;
+    width: 100%;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    color: #454f5b;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select {
+    width: 100%;
+    padding: 11px 14px;
+    font-size: 0.95rem;
+    border: 1px solid #d2d6dc;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.5;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-group input::placeholder {
+    color: #909aa3;
+    opacity: 1;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+    background-color: #fff;
+}
+
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.9rem center;
+    background-size: 10px 10px;
+    padding-right: 2.5rem;
+}
+
+.form-group small {
+    font-size: 0.78rem;
+    color: #6c757d;
+    display: block; /* Para o margin-top funcionar */
+    margin-top: 4px;
+}
+.form-group small a.find-cep { /* Seletor específico para "Não sei meu CEP" */
+    color: #3498db;
+    text-decoration: underline; /* Garante que o sublinhado apareça */
+}
+
+
+/* Layout para campos lado a lado */
+.form-group-half, .form-group-third {
+    display: flex;
+    gap: 20px; /* Espaço entre os campos lado a lado */
+}
+.form-group-half > div, .form-group-third > div {
+    flex: 1; /* Distribui o espaço igualmente */
+}
+/* Específico para o CEP no form-group-third, se ele for o primeiro filho e precisar ser menor */
+.form-group-third > div:first-child:has(input#cep),
+.form-group-third > div:first-child:has(input#cardExpiry) { /* Exemplo se cardExpiry for o primeiro */
+    flex: 0.8; /* Ou um valor que faça sentido para o campo CEP/Validade ser menor */
+}
+
+
+.summary-box {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+    box-shadow: none;
+    margin-bottom: 25px;
+}
+
+.summary-box h3 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #dee2e6;
+    font-weight: 600;
+}
+
+.summary-item {
+    display: flex; /* Adicionado para alinhar imagem, detalhes e preço */
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+.summary-item:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+.summary-item-image { /* Adicionado para controlar a imagem no resumo */
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+}
+.summary-item-details { /* Adicionado para o container dos detalhes */
+    flex-grow: 1;
+}
+
+.summary-item-details h4 {
+    font-size: 1rem;
+    color: #343a40;
+    font-weight: 500;
+    margin-bottom: 3px; /* Adicionado */
+}
+.summary-item-details p {
+    font-size: 0.82rem;
+    color: #5a6268;
+}
+
+.summary-item-price {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #343a40;
+    white-space: nowrap; /* Adicionado */
+}
+
+.summary-total {
+    display: flex; /* Adicionado */
+    justify-content: space-between; /* Adicionado */
+    align-items: center; /* Adicionado */
+    font-size: 1.1rem;
+    font-weight: 500}

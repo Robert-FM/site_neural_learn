@@ -1,0 +1,286 @@
+/* Reset básico e fontes (mantido) */
+body, h1, h2, h3, p, ul, li, a, label, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f6f8;
+    /* Ajuste este padding-top para a ALTURA EXATA do seu header */
+    padding-top: 80px; /* Exemplo, verifique a altura real do seu header */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+/* Header (mantido) */
+header {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+header a {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active { /* Estilo para link ativo no menu */
+    color: #3498db;
+    font-weight: bold;
+}
+
+/* Conteúdo Principal para páginas de acesso (Login, Lembrar Senha, Registro) */
+.access-main-content {
+    flex-grow: 1;
+    display: flex;
+    padding: 20px 0; /* Padding vertical */
+}
+
+/* Contêiner do formulário (genérico para login, lembrar senha, etc.) */
+.access-main-content > .container { /* O .container filho direto do .access-main-content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o .form-container verticalmente */
+    align-items: center;   /* Centraliza o .form-container horizontalmente */
+    width: 100%;
+    flex-grow: 1;
+}
+
+.form-container { /* Card branco do formulário */
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 450px; /* Largura do card do formulário */
+    text-align: center;
+}
+
+.form-container h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 25px; /* Aumentado um pouco o espaço */
+}
+
+/* Estilos do Formulário (comuns) */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="text"] { /* Adicionado input text para o futuro */
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group input[type="text"]:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Opções dentro do formulário (Ex: Esqueci a senha) */
+.form-options {
+    text-align: right;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.form-options .forgot-password {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.form-options .forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Botão Primário (Login, Enviar Link, Registrar) */
+.btn-primary {
+    background-color: #3498db;
+    color: #fff;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px; /* Espaço acima do botão */
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+/* Mensagem Importante (para login e talvez outros) */
+.important-message {
+    background-color: #f8f9fa; /* Cor de fundo suave */
+    border: 1px solid #e9ecef;
+    border-left: 4px solid #3498db; /* Destaque azul à esquerda */
+    padding: 15px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 0.9rem;
+    color: #495057;
+}
+
+.important-message p {
+    margin: 0;
+}
+
+/* Ação Alternativa (Ex: Voltar para o Login, Não tem conta?) */
+.alternative-action {
+    margin-top: 25px;
+    font-size: 0.9rem;
+}
+
+.alternative-action a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.alternative-action a:hover {
+    text-decoration: underline;
+}
+
+
+/* Footer (mantido) */
+footer {
+    background-color: #1a252f;
+    color: #bdc3c7;
+    text-align: center;
+    padding: 30px 0;
+}
+
+footer p {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade (mantida e genérica) */
+@media (max-width: 768px) {
+    /* Lembre-se de ajustar o padding-top do body se a altura do header mudar */
+    header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo {
+        margin-bottom: 10px;
+    }
+    nav ul {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul li {
+        margin: 8px 0;
+        margin-left: 0;
+    }
+
+    .form-container { /* Ajusta o padding do card em telas menores */
+        padding: 25px 20px;
+    }
+
+    .form-container h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: 20px 15px;
+    }
+    .form-container h2 {
+        font-size: 1.6rem;
+    }
+    .important-message {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+    .btn-primary {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+}
